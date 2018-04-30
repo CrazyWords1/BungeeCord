@@ -44,7 +44,7 @@ public class BossBar extends DefinedPacket
                 health = buf.readFloat();
                 color = readVarInt( buf );
                 division = readVarInt( buf );
-                flags = buf.readByte();
+                flags = buf.readUnsignedByte();
                 break;
             // Health
             case 2:
@@ -61,7 +61,7 @@ public class BossBar extends DefinedPacket
                 break;
             // Flags
             case 5:
-                flags = buf.readByte();
+                flags = buf.readUnsignedByte();
                 break;
         }
     }
