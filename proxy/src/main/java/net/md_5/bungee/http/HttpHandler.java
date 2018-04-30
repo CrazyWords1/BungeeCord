@@ -26,7 +26,7 @@ public class HttpHandler extends SimpleChannelInboundHandler<HttpObject>
             callback.done( null, cause );
         } finally
         {
-            ctx.channel().close();
+            ctx.close();
         }
     }
 
