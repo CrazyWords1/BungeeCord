@@ -263,7 +263,7 @@ public class InitialHandler extends PacketHandler implements PendingConnection
         this.handshake = handshake;
         ch.setVersion( handshake.getProtocolVersion() );
 
-        // Starting with FML 1.8, a "\0FML\0" token is appended to the handshake. This interferes 
+        // Starting with FML 1.8, a "\0FML\0" token is appended to the handshake. This interferes
         // with Bungee's IP forwarding, so we detect it, and remove it from the host string, for now.
         // We know FML appends \00FML\00. However, we need to also consider that other systems might
         // add their own data to the end of the string. So, we just take everything from the \0 character
@@ -396,7 +396,7 @@ public class InitialHandler extends PacketHandler implements PendingConnection
 
         String encName = URLEncoder.encode( InitialHandler.this.getName(), "UTF-8" );
 
-        MessageDigest sha = MessageDigest.getInstance( "SHA-1" );
+        MessageDigest sha = MessageDigest.getInstance( "SHA-256" );
         for ( byte[] bit : new byte[][]
         {
             request.getServerId().getBytes( "ISO_8859_1" ), sharedKey.getEncoded(), EncryptionUtil.keys.getPublic().getEncoded()
