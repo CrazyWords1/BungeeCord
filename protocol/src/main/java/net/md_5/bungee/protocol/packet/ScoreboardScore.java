@@ -28,7 +28,7 @@ public class ScoreboardScore extends DefinedPacket
     public void read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
     {
         itemName = readString( buf );
-        action = buf.readByte();
+        action = buf.readUnsignedByte();
         scoreName = readString( buf );
         if ( action != 1 )
         {

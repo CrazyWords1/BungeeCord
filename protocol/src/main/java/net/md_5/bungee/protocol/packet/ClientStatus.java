@@ -20,7 +20,7 @@ public class ClientStatus extends DefinedPacket
     @Override
     public void read(ByteBuf buf)
     {
-        payload = buf.readByte();
+        payload = buf.readUnsignedByte();
     }
 
     @Override

@@ -24,7 +24,7 @@ public class ScoreboardDisplay extends DefinedPacket
     @Override
     public void read(ByteBuf buf)
     {
-        position = buf.readByte();
+        position = buf.readUnsignedByte();
         name = readString( buf );
     }
 

@@ -43,19 +43,19 @@ public class Team extends DefinedPacket
     public void read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
     {
         name = readString( buf );
-        mode = buf.readByte();
+        mode = buf.readUnsignedByte();
         if ( mode == 0 || mode == 2 )
         {
             displayName = readString( buf );
             prefix = readString( buf );
             suffix = readString( buf );
-            friendlyFire = buf.readByte();
+            friendlyFire = buf.readUnsignedByte();
             nameTagVisibility = readString( buf );
             if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_9 )
             {
                 collisionRule = readString( buf );
             }
-            color = buf.readByte();
+            color = buf.readUnsignedByte();
         }
         if ( mode == 0 || mode == 3 || mode == 4 )
         {

@@ -30,7 +30,7 @@ public class Chat extends DefinedPacket
         message = readString( buf );
         if ( direction == ProtocolConstants.Direction.TO_CLIENT )
         {
-            position = buf.readByte();
+            position = buf.readUnsignedByte();
         }
     }
 
